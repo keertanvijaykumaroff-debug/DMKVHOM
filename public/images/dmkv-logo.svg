@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="600" height="200">
+  <style>
+    .text { fill: white; text-anchor: middle; }
+    .title { font-family: serif; font-weight: bold; font-size: 120px; letter-spacing: 4px; }
+    .subtitle { font-family: sans-serif; font-weight: 300; font-size: 24px; letter-spacing: 6px; text-transform: uppercase; fill: #a3a3a3; }
+  </style>
+  <text x="300" y="110" class="text title">DMKV</text>
+  <text x="300" y="160" class="text subtitle">&mdash; HOUSE OF MARKETING &mdash;</text>
+</svg>
