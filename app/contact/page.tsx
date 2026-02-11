@@ -186,7 +186,7 @@ export default function Contact() {
 
           {/* Social Links */}
           <section className="text-center space-y-6 animate-slideIn">
-            <p className="text-gray-400">Follow us on social media</p>
+            <p className="text-gray-400">Connect with us</p>
             <div className="flex justify-center gap-4">
               {[
                 { name: 'LinkedIn', href: 'https://www.linkedin.com/company/dmkv-hom' },
