@@ -188,22 +188,20 @@ export default function Contact() {
           <section className="text-center space-y-6 animate-slideIn">
             <p className="text-gray-400">Follow us on social media</p>
             <div className="flex justify-center gap-4">
-              <div className="flex justify-center gap-4">
-                {[
-                  { name: 'LinkedIn', href: 'https://www.linkedin.com/company/dmkv-hom' },
-                  { name: 'WhatsApp', href: 'https://wa.me/918861771361' }
-                ].map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="glass px-6 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/15 transition-all duration-300"
-                  >
-                    {social.name}
-                  </a>
-                ))}
-              </div>
+              {[
+                { name: 'LinkedIn', href: 'https://www.linkedin.com/company/dmkv-hom' },
+                { name: 'WhatsApp', href: 'https://wa.me/918861771361' }
+              ].map((social) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass px-6 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/15 transition-all duration-300"
+                >
+                  {social.name}
+                </a>
+              ))}
             </div>
           </section>
         </div>
