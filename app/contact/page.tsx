@@ -57,8 +57,8 @@ export default function Contact() {
             {[
               {
                 title: 'Email',
-                content: 'sales@dmvk.in',
-                href: 'mailto:sales@dmvk.in',
+                content: 'sales@dmkvhouseofmarketing.com',
+                href: 'mailto:sales@dmkvhouseofmarketing.com',
               },
               {
                 title: 'Phone',
@@ -188,13 +188,20 @@ export default function Contact() {
           <section className="text-center space-y-6 animate-slideIn">
             <p className="text-gray-400">Follow us on social media</p>
             <div className="flex justify-center gap-4">
-              {['LinkedIn', 'Twitter', 'Instagram', 'Facebook'].map((social) => (
+              {[
+                { name: 'LinkedIn', href: 'https://www.linkedin.com/company/dmkv-hom' },
+                { name: 'Twitter', href: '#' },
+                { name: 'Instagram', href: '#' },
+                { name: 'Facebook', href: '#' }
+              ].map((social) => (
                 <a
-                  key={social}
-                  href="#"
+                  key={social.name}
+                  href={social.href}
+                  target={social.name === 'LinkedIn' ? '_blank' : undefined}
+                  rel={social.name === 'LinkedIn' ? 'noopener noreferrer' : undefined}
                   className="glass px-6 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/15 transition-all duration-300"
                 >
-                  {social}
+                  {social.name}
                 </a>
               ))}
             </div>
