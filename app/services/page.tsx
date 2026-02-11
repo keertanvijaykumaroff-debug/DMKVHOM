@@ -100,7 +100,6 @@ export default function Services() {
                                             <span className="text-sm font-medium text-gray-400">
                                                 {service.category}
                                             </span>
-                                            <span className="text-white/50">→</span>
                                         </div>
 
                                         <h3 className="text-2xl font-semibold text-white group-hover:text-white transition-colors">

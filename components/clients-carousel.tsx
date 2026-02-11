@@ -9,11 +9,12 @@ const clients = [
 ]
 
 export function ClientsCarousel() {
-  const replicatedClients = [...clients, ...clients, ...clients, ...clients]
+  // Replicate array enough times to ensure seamless loop
+  const replicatedClients = [...clients, ...clients, ...clients, ...clients, ...clients, ...clients]
 
   return (
     <div className="w-full overflow-hidden py-10">
-      <div className="flex gap-24 animate-scroll items-center">
+      <div className="flex w-max gap-24 animate-scroll items-center hover:pause">
         {replicatedClients.map((client, idx) => (
           <div
             key={idx}
