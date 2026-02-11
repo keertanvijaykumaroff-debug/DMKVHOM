@@ -74,6 +74,10 @@ export default function Home() {
         <BlogCarousel />
 
         <CTASection />
+
+        <footer className="text-center text-gray-500 text-sm py-8">
+          <p>&copy; 2026 DMKV House of Marketing</p>
+        </footer>
       </main>
     </div>
   )
