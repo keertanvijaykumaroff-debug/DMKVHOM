@@ -90,8 +90,8 @@ export default function About() {
               Founder
             </h2>
             <div className="flex justify-center">
-              <div className="glass p-8 rounded-2xl text-center animate-float max-w-sm w-full">
-                <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white/10">
+              <div className="glass p-6 rounded-2xl text-center animate-float max-w-xs w-full">
+                <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white/10">
                   <img
                     src="/images/clients/keertan.jpeg"
                     alt="Keertan Vijaykumar"
