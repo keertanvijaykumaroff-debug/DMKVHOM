@@ -4,6 +4,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Navigation } from '@/components/navigation'
 import { ClientsCarousel } from '@/components/clients-carousel'
+import { StatsSection } from '@/components/stats-section'
+import { ProcessTimeline } from '@/components/process-timeline'
+import { BlogCarousel } from '@/components/blog-carousel'
+import { CTASection } from '@/components/cta-section'
 
 export default function Home() {
   return (
@@ -54,6 +58,9 @@ export default function Home() {
 
         {/* Clients Carousel Section */}
         {/* Clients Carousel Section */}
+        <StatsSection />
+
+        {/* Clients Carousel Section */}
         <section className="w-full py-10">
           <div className="max-w-5xl mx-auto space-y-4 text-center px-6 mb-12 animate-slideIn">
             <h2 className="text-3xl font-semibold text-white">
@@ -66,27 +73,11 @@ export default function Home() {
           <ClientsCarousel />
         </section>
 
-        {/* Stats Section */}
-        <section className="w-full px-6 mt-32">
-          <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
-            {[
-              { number: '50+', label: 'Projects Completed' },
-              { number: '25+', label: 'Happy Clients' },
-              { number: '2024', label: 'Est. Year' },
-            ].map((stat, idx) => (
-              <div
-                key={idx}
-                className="glass p-8 rounded-2xl text-center animate-fadeInUp"
-                style={{ animationDelay: `${idx * 100}ms` }}
-              >
-                <div className="text-4xl font-bold text-white mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-gray-400">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </section>
+        <ProcessTimeline />
+
+        <BlogCarousel />
+
+        <CTASection />
       </main>
     </div>
   )
