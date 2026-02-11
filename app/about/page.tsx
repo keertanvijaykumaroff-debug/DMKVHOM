@@ -93,7 +93,7 @@ export default function About() {
               <div className="glass p-8 rounded-2xl text-center animate-float max-w-sm w-full">
                 <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white/10">
                   <img
-                    src="/images/clients/keertan.jpg"
+                    src="/images/clients/keertan.jpeg"
                     alt="Keertan Vijaykumar"
                     className="w-full h-full object-cover"
                   />
