@@ -18,6 +18,11 @@ export const metadata: Metadata = {
     siteName: 'DMKV',
     type: 'website',
   },
+  icons: {
+    icon: '/favicon.png', // Fallback to favicon.ico if not found, but we'll ask user for png
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
 }
 
 export const viewport: Viewport = {
