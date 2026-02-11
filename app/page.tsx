@@ -25,11 +25,15 @@ export default function Home() {
         <section className="flex-1 flex flex-col items-center justify-center px-6 mb-20">
           <div className="text-center space-y-8 animate-fadeInUp max-w-4xl">
             <div className="flex justify-center mb-6">
-              <img
-                src="/images/dmkv-logo.png"
-                alt="DMKV Logo"
-                className="animate-float w-full max-w-2xl h-auto object-contain"
-              />
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="600" height="200" className="animate-float w-full max-w-2xl h-auto">
+                <style>
+                  {`.text { fill: white; text-anchor: middle; }
+                  .title { font-family: serif; font-weight: bold; font-size: 120px; letter-spacing: 4px; }
+                  .subtitle { font-family: sans-serif; font-weight: 300; font-size: 24px; letter-spacing: 6px; text-transform: uppercase; fill: #a3a3a3; }`}
+                </style>
+                <text x="300" y="110" className="text title">DMKV</text>
+                <text x="300" y="160" className="text subtitle">&mdash; HOUSE OF MARKETING &mdash;</text>
+              </svg>
             </div>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">
               We transform brands through strategic digital marketing, creative excellence, and data-driven insights that drive real growth.
