@@ -67,7 +67,7 @@ export default function Contact() {
               },
               {
                 title: 'Response Time',
-                content: '24-48 hours',
+                content: '12 - 24 hours',
                 href: null,
               },
             ].map((info, idx) => {
@@ -141,17 +141,34 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div>
-                <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
-                  Company
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-white/40 focus:bg-white/15 transition-all duration-300"
-                  placeholder="Your company"
-                />
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="mobile" className="block text-sm font-medium text-gray-300 mb-2">
+                    Mobile Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="mobile"
+                    name="mobile"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-white/40 focus:bg-white/15 transition-all duration-300"
+                    placeholder="+91 98765 43210"
+                  />
+                  {state.errors?.mobile && (
+                    <p className="text-red-400 text-sm mt-1">{state.errors.mobile[0]}</p>
+                  )}
+                </div>
+                <div>
+                  <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
+                    Company
+                  </label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-white/40 focus:bg-white/15 transition-all duration-300"
+                    placeholder="Your company"
+                  />
+                </div>
               </div>
 
               <div>

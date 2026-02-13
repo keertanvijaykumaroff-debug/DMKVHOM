@@ -5,6 +5,7 @@ import { z } from 'zod'
 const contactFormSchema = z.object({
     name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
     email: z.string().email({ message: 'Please enter a valid email address.' }),
+    mobile: z.string().optional(),
     company: z.string().optional(),
     message: z.string().min(10, { message: 'Message must be at least 10 characters.' }),
 })
@@ -15,6 +16,7 @@ export type ContactFormState = {
     errors?: {
         name?: string[]
         email?: string[]
+        mobile?: string[]
         company?: string[]
         message?: string[]
     }
@@ -24,6 +26,7 @@ export async function submitContactForm(prevState: ContactFormState, formData: F
     const validatedFields = contactFormSchema.safeParse({
         name: formData.get('name'),
         email: formData.get('email'),
+        mobile: formData.get('mobile'),
         company: formData.get('company'),
         message: formData.get('message'),
     })
@@ -36,7 +39,7 @@ export async function submitContactForm(prevState: ContactFormState, formData: F
         }
     }
 
-    const { name, email, company, message } = validatedFields.data
+    const { name, email, mobile, company, message } = validatedFields.data
 
     try {
         const endpoint = process.env.CONTACT_FORM_ENDPOINT
@@ -58,6 +61,7 @@ export async function submitContactForm(prevState: ContactFormState, formData: F
             body: JSON.stringify({
                 name,
                 email,
+                mobile,
                 company,
                 message,
                 _subject: `New submission from ${name}`, // Formspree specific
