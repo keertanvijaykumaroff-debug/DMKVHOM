@@ -39,34 +39,35 @@ export async function submitContactForm(prevState: ContactFormState, formData: F
     const { name, email, company, message } = validatedFields.data
 
     try {
-        const webhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL
+        const endpoint = process.env.CONTACT_FORM_ENDPOINT
 
-        if (!webhookUrl) {
-            console.error('GOOGLE_SHEETS_WEBHOOK_URL is not defined')
+        if (!endpoint) {
+            console.error('CONTACT_FORM_ENDPOINT is not defined')
             return {
                 success: false,
-                message: 'Configuration error: Google Sheets URL not set.',
+                message: 'Configuration error: Contact form endpoint not set.',
             }
         }
 
-        const response = await fetch(webhookUrl, {
+        const response = await fetch(endpoint, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Accept': 'application/json'
             },
             body: JSON.stringify({
                 name,
                 email,
                 company,
                 message,
-                date: new Date().toISOString(),
+                _subject: `New submission from ${name}`, // Formspree specific
             }),
         })
 
-        // Apps Scripts usually return a 200 even on logical error if not handled, 
-        // but we check for HTTP error status just in case.
         if (!response.ok) {
-            throw new Error('Failed to submit to Google Sheets')
+            const data = await response.json().catch(() => ({}))
+            console.error('Formspree error:', data)
+            throw new Error('Failed to submit to Contact Form')
         }
 
         return {
