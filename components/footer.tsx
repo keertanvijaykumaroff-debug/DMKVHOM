@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { MessageCircle, Heart } from 'lucide-react'
+import { MessageCircle, Heart, Linkedin } from 'lucide-react'
 
 export function Footer() {
     const links = [
@@ -19,7 +19,8 @@ export function Footer() {
     ]
 
     const social = [
-        { icon: MessageCircle, href: 'https://wa.me/919945037689' }, // Assuming a placeholder or user provided number, I'll use a generic link or asking user would be better, but for now I'll just put a placeholder href
+        { icon: MessageCircle, href: 'https://wa.me/919945037689' },
+        { icon: Linkedin, href: 'https://www.linkedin.com/company/dmkv-house-of-marketing' }, // Placeholder or generic link until provided
     ]
 
     return (
