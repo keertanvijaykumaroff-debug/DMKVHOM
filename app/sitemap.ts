@@ -10,11 +10,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/services',
         '/blog',
         '/contact',
+        '/digital-marketing-faq',
+        '/about-keertan-vijaykumar',
+        '/privacy-policy',
+        '/terms-conditions',
+        '/refund-cancellation',
+        '/disclaimer',
+        '/cookie-policy',
+        '/data-protection',
     ].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date(),
         changeFrequency: 'monthly' as const,
-        priority: route === '' ? 1 : 0.8,
+        priority: route === '' ? 1 : route === '/privacy-policy' || route === '/terms-conditions' ? 0.5 : 0.8,
     }))
 
     const blogRoutes = blogPosts.map((post) => ({

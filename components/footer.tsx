@@ -13,9 +13,9 @@ export function Footer() {
     ]
 
     const legal = [
-        { label: 'FAQ', href: '/digital-marketing-faq' },
-        { label: 'Sitemap', href: '/sitemap.xml' },
-        { label: 'Policies', href: '/privacy-policy' },
+        { label: 'Privacy Policy', href: '/privacy-policy' },
+        { label: 'Terms & Conditions', href: '/terms-conditions' },
+        { label: 'Refund Policy', href: '/refund-cancellation' },
     ]
 
     const social = [
