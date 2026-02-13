@@ -1,34 +1,29 @@
 'use client'
 
 import React from "react"
-
-import { useState } from 'react'
+import { useFormState, useFormStatus } from 'react-dom'
 import { Navigation } from '@/components/navigation'
+import { submitContactForm } from '@/actions/contact'
+
+function SubmitButton() {
+  const { pending } = useFormStatus()
+
+  return (
+    <button
+      type="submit"
+      disabled={pending}
+      className="w-full py-3 bg-white text-black rounded-xl font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+    >
+      {pending ? 'Sending...' : 'Send Message'}
+    </button>
+  )
+}
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
+  const [state, formAction] = useFormState(submitContactForm, {
+    success: false,
     message: '',
   })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission
-    console.log('Form submitted:', formData)
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
-      setFormData({ name: '', email: '', company: '', message: '' })
-    }, 3000)
-  }
 
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-background via-background to-background overflow-hidden">
@@ -110,7 +105,7 @@ export default function Contact() {
 
           {/* Contact Form */}
           <section className="glass p-8 md:p-12 rounded-3xl animate-fadeInUp">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form action={formAction} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
@@ -120,12 +115,13 @@ export default function Contact() {
                     type="text"
                     id="name"
                     name="name"
-                    value={formData.name}
-                    onChange={handleChange}
                     required
                     className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-white/40 focus:bg-white/15 transition-all duration-300"
                     placeholder="Your name"
                   />
+                  {state.errors?.name && (
+                    <p className="text-red-400 text-sm mt-1">{state.errors.name[0]}</p>
+                  )}
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
@@ -135,12 +131,13 @@ export default function Contact() {
                     type="email"
                     id="email"
                     name="email"
-                    value={formData.email}
-                    onChange={handleChange}
                     required
                     className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-white/40 focus:bg-white/15 transition-all duration-300"
                     placeholder="your@email.com"
                   />
+                  {state.errors?.email && (
+                    <p className="text-red-400 text-sm mt-1">{state.errors.email[0]}</p>
+                  )}
                 </div>
               </div>
 
@@ -152,8 +149,6 @@ export default function Contact() {
                   type="text"
                   id="company"
                   name="company"
-                  value={formData.company}
-                  onChange={handleChange}
                   className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-white/40 focus:bg-white/15 transition-all duration-300"
                   placeholder="Your company"
                 />
@@ -166,21 +161,23 @@ export default function Contact() {
                 <textarea
                   id="message"
                   name="message"
-                  value={formData.message}
-                  onChange={handleChange}
                   required
                   rows={6}
                   className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-white/40 focus:bg-white/15 transition-all duration-300 resize-none"
                   placeholder="Tell us about your project..."
                 />
+                {state.errors?.message && (
+                  <p className="text-red-400 text-sm mt-1">{state.errors.message[0]}</p>
+                )}
               </div>
 
-              <button
-                type="submit"
-                className="w-full py-3 bg-white text-black rounded-xl font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105"
-              >
-                {submitted ? 'Message Sent! ✓' : 'Send Message'}
-              </button>
+              {state.message && (
+                <div className={`p-4 rounded-xl ${state.success ? 'bg-green-500/20 text-green-200' : 'bg-red-500/20 text-red-200'}`}>
+                  {state.message}
+                </div>
+              )}
+
+              <SubmitButton />
             </form>
           </section>
 
