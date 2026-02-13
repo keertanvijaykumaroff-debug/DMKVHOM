@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { Navigation } from '@/components/navigation'
 
 export default function About() {
@@ -91,11 +92,12 @@ export default function About() {
             </h2>
             <div className="flex justify-center">
               <div className="glass p-6 rounded-2xl text-center animate-float max-w-xs w-full">
-                <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white/10">
-                  <img
+                <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white/10">
+                  <Image
                     src="/images/clients/keertan.jpeg"
                     alt="Keertan Vijaykumar"
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
                   />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">

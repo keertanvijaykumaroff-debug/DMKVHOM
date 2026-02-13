@@ -1,4 +1,4 @@
-'use client'
+import Image from 'next/image'
 
 const clients = [
   { name: 'Hadiyah', logo: '/images/clients/hg.png', type: 'image' },
@@ -19,13 +19,14 @@ export function ClientsCarousel() {
         {replicatedClients.map((client, idx) => (
           <div
             key={idx}
-            className="flex-shrink-0 w-80 h-40 flex items-center justify-center grayscale-0 transition-transform duration-300 hover:scale-110"
+            className="relative flex-shrink-0 w-80 h-40 flex items-center justify-center grayscale-0 transition-transform duration-300 hover:scale-110"
           >
-            {client.type === 'image' ? (
-              <img
+            {client.type === 'image' && client.logo ? (
+              <Image
                 src={client.logo}
                 alt={client.name}
-                className="max-w-full max-h-full object-contain"
+                fill
+                className="object-contain"
               />
             ) : (
               <span className="text-4xl font-bold text-white tracking-wide">
@@ -36,6 +37,6 @@ export function ClientsCarousel() {
         ))}
       </div>
 
-    </div>
+    </div >
   )
 }

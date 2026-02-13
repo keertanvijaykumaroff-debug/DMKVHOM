@@ -1,4 +1,4 @@
-'use client'
+import Image from 'next/image'
 
 export function TestimonialsSection() {
     const testimonials = [
@@ -54,8 +54,14 @@ export function TestimonialsSection() {
                             </div>
 
                             <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 rounded-full bg-white/10 overflow-hidden">
-                                    <img src={testimonial.image} alt={testimonial.author} className="w-full h-full object-cover" />
+                                <div className="relative w-12 h-12 rounded-full bg-white/10 overflow-hidden">
+                                    <Image
+                                        src={testimonial.image}
+                                        alt={testimonial.author}
+                                        fill
+                                        sizes="48px"
+                                        className="object-cover"
+                                    />
                                 </div>
                                 <div>
                                     <div className="text-white font-bold">{testimonial.author}</div>
