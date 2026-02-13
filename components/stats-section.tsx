@@ -1,62 +1,38 @@
 'use client'
 
-import { useEffect, useState, useRef } from 'react'
+import { useRef, useEffect } from 'react'
+import { motion, useInView, useMotionValue, useSpring } from 'framer-motion'
 
-function useIntersectionObserver(ref: React.RefObject<Element | null>, options: IntersectionObserverInit = {}) {
-    const [isIntersecting, setIsIntersecting] = useState(false)
-
-    useEffect(() => {
-        const element = ref.current
-        if (!element) return
-
-        const observer = new IntersectionObserver(([entry]) => {
-            setIsIntersecting(entry.isIntersecting)
-        }, options)
-
-        observer.observe(element)
-
-        return () => {
-            observer.disconnect()
-        }
-    }, [ref, options])
-
-    return isIntersecting
-}
-
-function Counter({ end, duration = 2000, label, suffix = '' }: { end: number; duration?: number; label: string; suffix?: string }) {
-    const [count, setCount] = useState(0)
+function Counter({ value, suffix = '', label }: { value: number; suffix?: string; label: string }) {
     const ref = useRef<HTMLDivElement>(null)
-    const isInView = useIntersectionObserver(ref, { threshold: 0.1 })
-    const [hasAnimated, setHasAnimated] = useState(false)
+    const inView = useInView(ref, { once: true, margin: "-100px" })
+
+    // Motion value for the number
+    const motionValue = useMotionValue(0)
+    // Spring for smooth animation
+    const springValue = useSpring(motionValue, { damping: 50, stiffness: 100 })
 
     useEffect(() => {
-        if (isInView && !hasAnimated) {
-            setHasAnimated(true)
-            let startTime: number
-            let animationFrame: number
-
-            const animate = (timestamp: number) => {
-                if (!startTime) startTime = timestamp
-                const progress = timestamp - startTime
-
-                if (progress < duration) {
-                    setCount(Math.min(end, Math.floor((progress / duration) * end)))
-                    animationFrame = requestAnimationFrame(animate)
-                } else {
-                    setCount(end)
-                }
-            }
-
-            animationFrame = requestAnimationFrame(animate)
-
-            return () => cancelAnimationFrame(animationFrame)
+        if (inView) {
+            motionValue.set(value)
         }
-    }, [isInView, end, duration, hasAnimated])
+    }, [inView, value, motionValue])
+
+    // Update text content directly for performance
+    const textRef = useRef<HTMLSpanElement>(null)
+    useEffect(() => {
+        return springValue.on("change", (latest) => {
+            if (textRef.current) {
+                textRef.current.textContent = String(Math.floor(latest))
+            }
+        })
+    }, [springValue])
 
     return (
         <div ref={ref} className="glass p-8 rounded-2xl text-center group hover:scale-105 transition-transform duration-300">
-            <div className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 mb-2">
-                {count}{suffix}
+            <div className="flex justify-center items-center gap-1 text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 mb-2">
+                <span ref={textRef}>0</span>
+                <span>{suffix}</span>
             </div>
             <div className="text-gray-400 font-medium tracking-wide group-hover:text-white transition-colors duration-300">
                 {label}
@@ -66,7 +42,6 @@ function Counter({ end, duration = 2000, label, suffix = '' }: { end: number; du
 }
 
 export function StatsSection() {
-    // Verified stats updated
     const stats = [
         { number: 50, suffix: '+', label: 'Projects Completed' },
         { number: 25, suffix: '+', label: 'Happy Clients' },
@@ -84,7 +59,7 @@ export function StatsSection() {
                     {stats.map((stat, idx) => (
                         <Counter
                             key={idx}
-                            end={stat.number}
+                            value={stat.number}
                             label={stat.label}
                             suffix={stat.suffix}
                         />
