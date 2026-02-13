@@ -32,6 +32,9 @@ export const viewport: Viewport = {
   userScalable: true,
 }
 
+import { Navigation } from '@/components/navigation'
+import { Footer } from '@/components/footer'
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -40,7 +43,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geist.className} font-sans antialiased`} suppressHydrationWarning>
+        <Navigation />
         {children}
+        <Footer />
       </body>
     </html>
   )

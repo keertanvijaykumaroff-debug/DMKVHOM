@@ -2,13 +2,11 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Navigation } from '@/components/navigation'
 import { ClientsCarousel } from '@/components/clients-carousel'
 import { StatsSection } from '@/components/stats-section'
 import { ProcessTimeline } from '@/components/process-timeline'
 import { BlogCarousel } from '@/components/blog-carousel'
 import { CTASection } from '@/components/cta-section'
-import { Footer } from '@/components/footer'
 
 export default function Home() {
   return (
@@ -18,8 +16,6 @@ export default function Home() {
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
       </div>
-
-      <Navigation />
 
       <main className="relative z-10 flex flex-col min-h-screen pt-32 pb-20">
         {/* Hero Section */}
@@ -80,8 +76,6 @@ export default function Home() {
         <BlogCarousel />
 
         <CTASection />
-
-        <Footer />
       </main>
     </div>
   )
