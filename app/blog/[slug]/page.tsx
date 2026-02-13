@@ -3,6 +3,7 @@ import { blogPosts } from '@/lib/blog-data'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, Calendar, User } from 'lucide-react'
+import { createBlogPostingSchema, createBreadcrumbSchema } from '@/lib/schemas'
 
 // Correctly typing params as a Promise for Next.js 15+ (if applicable) or standard object
 // Adjusting for compatibility with typical Next.js dynamic routes
@@ -39,6 +40,7 @@ export async function generateMetadata({ params }: Props) {
     }
 }
 
+
 export default async function BlogPost({ params }: Props) {
     const { slug } = await params
     const post = blogPosts.find((p) => p.slug === slug)
@@ -47,8 +49,24 @@ export default async function BlogPost({ params }: Props) {
         notFound()
     }
 
+    const postSchema = createBlogPostingSchema(post)
+    const breadcrumbSchema = createBreadcrumbSchema([
+        { name: 'Home', url: 'https://www.dmkvhouseofmarketing.com' },
+        { name: 'Blog', url: 'https://www.dmkvhouseofmarketing.com/blog' },
+        { name: post.title, url: `https://www.dmkvhouseofmarketing.com/blog/${post.slug}` }
+    ])
+
     return (
         <div className="relative min-h-screen bg-black text-white selection:bg-white/20">
+            {/* Schema.org JSON-LD */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(postSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-0 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-float" />
                 <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
@@ -59,9 +77,9 @@ export default async function BlogPost({ params }: Props) {
             <main className="relative z-10 pt-32 pb-20 px-6">
                 <article className="max-w-3xl mx-auto">
                     {/* Back Link */}
-                    <Link href="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8 group">
+                    <Link href="/blog" className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8 group">
                         <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
-                        Back to Home
+                        Back to Blog
                     </Link>
 
                     {/* Header */}

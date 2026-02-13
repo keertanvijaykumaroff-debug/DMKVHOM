@@ -117,9 +117,18 @@ const faqs = [
     }
 ]
 
+import { createFAQSchema } from '@/lib/schemas'
+
 export default function FAQPage() {
+    const faqSchema = createFAQSchema(faqs)
+
     return (
         <div className="min-h-screen pt-32 pb-20 px-6">
+            {/* Schema.org JSON-LD */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
             <div className="max-w-4xl mx-auto space-y-12">
                 <div className="text-center space-y-4">
                     <h1 className="text-4xl md:text-5xl font-bold font-serif">Frequently Asked Questions</h1>

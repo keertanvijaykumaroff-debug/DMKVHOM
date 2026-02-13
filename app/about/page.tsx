@@ -3,10 +3,20 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Navigation } from '@/components/navigation'
+import { organizationSchema, personSchema } from '@/lib/schemas'
 
 export default function About() {
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-background via-background to-background overflow-hidden">
+      {/* Schema.org JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/3 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-float" />

@@ -1,6 +1,12 @@
 'use client'
 
 import { Navigation } from '@/components/navigation'
+import { servicesSchema, createBreadcrumbSchema } from '@/lib/schemas'
+
+const breadcrumbs = createBreadcrumbSchema([
+    { name: 'Home', url: 'https://www.dmkvhouseofmarketing.com' },
+    { name: 'Services', url: 'https://www.dmkvhouseofmarketing.com/services' }
+])
 
 const services = [
     {
@@ -64,6 +70,15 @@ const services = [
 export default function Services() {
     return (
         <div className="relative min-h-screen bg-gradient-to-b from-background via-background to-background overflow-hidden">
+            {/* Schema.org JSON-LD */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+            />
             {/* Animated background elements */}
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute top-0 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-float" />

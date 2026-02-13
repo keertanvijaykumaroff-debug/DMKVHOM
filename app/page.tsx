@@ -7,10 +7,24 @@ import { StatsSection } from '@/components/stats-section'
 import { ProcessTimeline } from '@/components/process-timeline'
 import { BlogCarousel } from '@/components/blog-carousel'
 import { CTASection } from '@/components/cta-section'
+import { organizationSchema, localBusinessSchema, websiteSchema } from '@/lib/schemas'
 
 export default function Home() {
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-background via-background to-background overflow-hidden">
+      {/* Schema.org JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-float" />

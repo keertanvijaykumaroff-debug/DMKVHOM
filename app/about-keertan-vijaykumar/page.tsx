@@ -11,9 +11,16 @@ export const metadata: Metadata = {
     },
 }
 
+import { personSchema } from '@/lib/schemas'
+
 export default function FounderPage() {
     return (
         <div className="min-h-screen pt-32 pb-20 px-6">
+            {/* Schema.org JSON-LD */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+            />
             <div className="max-w-4xl mx-auto space-y-20">
 
                 {/* Back Link */}
