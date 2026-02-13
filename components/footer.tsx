@@ -19,8 +19,8 @@ export function Footer() {
     ]
 
     const social = [
-        { icon: MessageCircle, href: 'https://wa.me/919945037689' },
-        { icon: Linkedin, href: 'https://www.linkedin.com/company/dmkv-house-of-marketing' }, // Placeholder or generic link until provided
+        { icon: MessageCircle, href: 'https://wa.me/918861771361' },
+        { icon: Linkedin, href: 'https://www.linkedin.com/company/dmkv-house-of-marketing' },
     ]
 
     return (
