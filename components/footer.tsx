@@ -13,7 +13,7 @@ export function Footer() {
     ]
 
     const legal = [
-        { label: 'FAQ', href: '/faq' },
+        { label: 'FAQ', href: '/digital-marketing-faq' },
         { label: 'Sitemap', href: '/sitemap.xml' },
         { label: 'Policies', href: '/privacy-policy' },
     ]
