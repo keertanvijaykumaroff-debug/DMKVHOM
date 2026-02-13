@@ -20,7 +20,7 @@ export function Footer() {
 
     const social = [
         { icon: MessageCircle, href: 'https://wa.me/918861771361' },
-        { icon: Linkedin, href: 'https://www.linkedin.com/company/dmkv-house-of-marketing' },
+        { icon: Linkedin, href: 'https://www.linkedin.com/company/104788746/admin/dashboard/' },
     ]
 
     return (
@@ -101,7 +101,7 @@ export function Footer() {
                     <p className="text-gray-500 text-xs">
                         &copy; 2026 DMKV House of Marketing. All rights reserved.
                     </p>
-                    <div className="flex items-center gap-2 text-gray-500 text-xs font-medium tracking-wide">
+                    <div className="flex items-center gap-2 text-gray-500 text-xs font-medium tracking-wide whitespace-nowrap">
                         <span>MADE IN INDIA</span>
                         <Heart size={12} className="text-red-500 fill-red-500" />
                     </div>
