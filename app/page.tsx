@@ -8,6 +8,7 @@ import { StatsSection } from '@/components/stats-section'
 import { ProcessTimeline } from '@/components/process-timeline'
 import { BlogCarousel } from '@/components/blog-carousel'
 import { CTASection } from '@/components/cta-section'
+import { Footer } from '@/components/footer'
 
 export default function Home() {
   return (
@@ -80,9 +81,7 @@ export default function Home() {
 
         <CTASection />
 
-        <footer className="text-center text-gray-500 text-sm py-8">
-          <p>&copy; 2026 DMKV House of Marketing</p>
-        </footer>
+        <Footer />
       </main>
     </div>
   )
