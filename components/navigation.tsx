@@ -12,6 +12,7 @@ export function Navigation() {
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
     { href: '/services', label: 'Services' },
+    { href: '/digital-marketing-faq', label: 'FAQ' },
     { href: '/contact', label: 'Contact' },
   ]
 
@@ -28,8 +29,8 @@ export function Navigation() {
                 onMouseEnter={() => setIsHovered(item.href)}
                 onMouseLeave={() => setIsHovered(null)}
                 className={`relative text-sm font-medium transition-all duration-300 ${isActive
-                    ? 'text-white'
-                    : 'text-gray-400 hover:text-white'
+                  ? 'text-white'
+                  : 'text-gray-400 hover:text-white'
                   }`}
               >
                 {item.label}
