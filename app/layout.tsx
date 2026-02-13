@@ -34,6 +34,7 @@ export const viewport: Viewport = {
 
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
+import { Breadcrumbs } from '@/components/breadcrumbs'
 
 export default function RootLayout({
   children,
@@ -44,6 +45,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${geist.className} font-sans antialiased`} suppressHydrationWarning>
         <Navigation />
+        <Breadcrumbs />
         {children}
         <Footer />
       </body>
