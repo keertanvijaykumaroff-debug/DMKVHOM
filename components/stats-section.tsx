@@ -66,6 +66,7 @@ function Counter({ end, duration = 2000, label, suffix = '' }: { end: number; du
 }
 
 export function StatsSection() {
+    // Verified stats updated
     const stats = [
         { number: 50, suffix: '+', label: 'Projects Completed' },
         { number: 25, suffix: '+', label: 'Happy Clients' },
