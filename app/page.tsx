@@ -37,7 +37,7 @@ export default function Home() {
               Digital Marketing Agency
             </h1>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">
-              We transform brands through strategic digital marketing, creative excellence, and data-driven insights that drive real growth.
+              We transform brands through strategic <Link href="/services" className="text-white hover:underline">digital marketing</Link>, creative excellence, and data-driven insights that drive real growth. Our <Link href="/services" className="text-white hover:underline">services</Link> include SEO, performance marketing, and brand strategy.
             </p>
 
             <div className="flex gap-4 justify-center pt-4">

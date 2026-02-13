@@ -28,7 +28,7 @@ export default function BlogIndex() {
                         Our Insights
                     </h1>
                     <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                        Explore our latest thoughts on digital marketing, technology, and brand strategy.
+                        Explore our latest thoughts on <Link href="/services" className="text-white hover:underline">digital marketing</Link>, technology, and brand strategy.
                     </p>
                 </section>
 

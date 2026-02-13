@@ -43,7 +43,7 @@ export default function About() {
                 Our Mission
               </h2>
               <p className="text-gray-400 text-lg leading-relaxed">
-                We believe in creating marketing solutions that are not just effective, but transformative. Our mission is to partner with brands that dare to dream bigger, helping them reach their audience through innovative strategies, compelling creative, and data-driven execution.
+                We believe in creating <Link href="/services" className="text-white hover:underline">marketing solutions</Link> that are not just effective, but transformative. Our mission is to partner with brands that dare to dream bigger, helping them reach their audience through innovative strategies, compelling creative, and data-driven execution. Explore our <Link href="/services" className="text-white hover:underline">digital marketing services</Link> to see how we can help your business grow.
               </p>
             </div>
           </section>

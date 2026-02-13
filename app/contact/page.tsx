@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, Suspense } from 'react'
 import { useFormState, useFormStatus } from 'react-dom'
 import { useSearchParams } from 'next/navigation'
+import Link from 'next/link'
 import { Navigation } from '@/components/navigation'
 import { submitContactForm } from '@/actions/contact'
 
@@ -43,7 +44,7 @@ function ContactForm() {
           Contact Us
         </h1>
         <p className="text-xl text-gray-400">
-          Let's discuss your next big marketing challenge
+          Let's discuss your next big marketing challenge. Interested in our <Link href="/services" className="text-white hover:underline">services</Link>? Get in touch today.
         </p>
       </section>
 
