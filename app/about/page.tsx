@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import Image from 'next/image'
 import { Navigation } from '@/components/navigation'
 
@@ -91,13 +92,16 @@ export default function About() {
               Founder
             </h2>
             <div className="flex justify-center">
-              <div className="glass p-6 rounded-2xl text-center animate-float max-w-xs w-full">
-                <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white/10">
+              <Link
+                href="/about-keertan-vijaykumar"
+                className="glass p-6 rounded-2xl text-center animate-float max-w-xs w-full group hover:bg-white/10 transition-all duration-300 cursor-pointer"
+              >
+                <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white/10 group-hover:border-white/20 transition-colors">
                   <Image
                     src="/images/clients/keertan.jpeg"
                     alt="Keertan Vijaykumar"
                     fill
-                    className="object-cover"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">
@@ -107,7 +111,7 @@ export default function About() {
                 <p className="text-gray-400 text-sm leading-relaxed max-w-xs mx-auto">
                   A visionary leader passionate about digital innovation, transforming brands through strategic marketing and creative excellence.
                 </p>
-              </div>
+              </Link>
             </div>
           </section>
         </div>
