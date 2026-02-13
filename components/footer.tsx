@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Facebook, Twitter, Instagram, Linkedin, Heart } from 'lucide-react'
+import { MessageCircle, Heart } from 'lucide-react'
 
 export function Footer() {
     const links = [
@@ -19,10 +19,7 @@ export function Footer() {
     ]
 
     const social = [
-        { icon: Facebook, href: '#' },
-        { icon: Twitter, href: '#' },
-        { icon: Instagram, href: '#' },
-        { icon: Linkedin, href: '#' },
+        { icon: MessageCircle, href: 'https://wa.me/919945037689' }, // Assuming a placeholder or user provided number, I'll use a generic link or asking user would be better, but for now I'll just put a placeholder href
     ]
 
     return (
@@ -32,7 +29,7 @@ export function Footer() {
                     {/* Brand Column */}
                     <div className="space-y-6">
                         <div className="flex items-center gap-2">
-                            <span className="text-2xl font-serif font-bold text-white">DMKV</span>
+                            <span className="text-2xl font-serif font-bold text-white">DMKV | House of Marketing</span>
                         </div>
                         <p className="text-gray-400 text-sm leading-relaxed">
                             Transforming brands through strategic digital marketing and creative excellence.

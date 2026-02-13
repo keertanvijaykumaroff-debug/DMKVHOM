@@ -20,12 +20,9 @@ export function CTASection() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <Link
                         href="/contact"
-                        className="group px-8 py-4 bg-white text-black rounded-full font-bold text-lg hover:bg-gray-200 transition-colors flex items-center gap-4"
+                        className="group px-8 py-4 bg-white text-black rounded-full font-bold text-lg hover:bg-gray-200 transition-colors flex items-center gap-2"
                     >
-                        <div className="flex flex-col items-start leading-none">
-                            <span>Start Your</span>
-                            <span>Project</span>
-                        </div>
+                        Start Your Project
                         <ArrowRight className="group-hover:translate-x-1 transition-transform" />
                     </Link>
                     <Link
