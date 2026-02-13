@@ -18,7 +18,7 @@ export function Navigation() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-8">
-      <div className="glass px-8 py-4 rounded-full">
+      <div className="glass-dark px-8 py-4 rounded-full">
         <div className="flex gap-8 items-center">
           {navItems.map((item) => {
             const isActive = pathname === item.href
