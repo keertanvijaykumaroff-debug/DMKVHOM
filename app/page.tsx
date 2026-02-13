@@ -22,7 +22,7 @@ export default function Home() {
         <section className="flex-1 flex flex-col items-center justify-center px-6 mb-20">
           <div className="text-center space-y-8 animate-fadeInUp max-w-4xl">
             <div className="flex justify-center mb-6">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="600" height="200" className="animate-float w-full max-w-2xl h-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="600" height="200" className="animate-float w-full max-w-2xl h-auto" aria-hidden="true">
                 <style>
                   {`.text { fill: white; text-anchor: middle; }
                   .title { font-family: serif; font-weight: bold; font-size: 120px; letter-spacing: 4px; }
@@ -33,6 +33,9 @@ export default function Home() {
                 <text x="300" y="160" className="text subtitle">&mdash; HOUSE OF MARKETING &mdash;</text>
               </svg>
             </div>
+            <h1 className="text-4xl md:text-5xl font-bold gradient-text">
+              Digital Marketing Agency
+            </h1>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">
               We transform brands through strategic digital marketing, creative excellence, and data-driven insights that drive real growth.
             </p>
