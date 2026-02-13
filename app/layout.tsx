@@ -9,8 +9,8 @@ const geist = Geist({ subsets: ['latin'] })
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.dmkvhouseofmarketing.com'),
   title: 'DMKV | House of Marketing',
-  description: 'Transform your brand with strategic digital marketing, creative excellence, and data-driven insights.',
-  keywords: 'digital marketing, branding, social media, marketing agency',
+  description: 'Leading digital marketing agency offering SEO, performance marketing, and brand strategy. Transform your business with data-driven digital marketing solutions.',
+  keywords: 'digital marketing, digital marketing agency, SEO services, performance marketing, brand strategy, marketing agency, digital marketing services',
   generator: 'v0.app',
   alternates: {
     canonical: '/',

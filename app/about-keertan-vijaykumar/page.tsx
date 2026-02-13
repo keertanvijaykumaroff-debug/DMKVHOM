@@ -5,7 +5,10 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
     title: 'Keertan Vijaykumar | Founder of DMKV',
-    description: 'Learn about Keertan Vijaykumar, the visionary founder of DMKV House of Marketing, and his philosophy on structured growth and strategic marketing.',
+    description: 'Meet Keertan Vijaykumar, founder of DMKV digital marketing agency. Learn about his vision for strategic digital marketing, SEO, and performance-driven growth.',
+    alternates: {
+        canonical: '/about-keertan-vijaykumar',
+    },
 }
 
 export default function FounderPage() {

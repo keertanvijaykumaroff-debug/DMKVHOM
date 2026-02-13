@@ -2,6 +2,15 @@ import { Navigation } from '@/components/navigation'
 import { blogPosts } from '@/lib/blog-data'
 import Link from 'next/link'
 import { ArrowRight, Calendar } from 'lucide-react'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: 'Digital Marketing Blog | DMKV House of Marketing',
+    description: 'Explore expert insights on digital marketing, SEO strategies, performance marketing, and brand growth from our digital marketing agency.',
+    alternates: {
+        canonical: '/blog',
+    },
+}
 
 export default function BlogIndex() {
     return (

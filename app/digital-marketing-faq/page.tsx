@@ -8,7 +8,10 @@ import { Metadata } from "next"
 
 export const metadata: Metadata = {
     title: "Frequently Asked Questions | DMKV House of Marketing",
-    description: "Find answers to common questions about DMKV House of Marketing's services, SEO, performance marketing, and more.",
+    description: "Get answers about our digital marketing services, SEO strategies, performance marketing, and how our digital marketing agency helps businesses grow online.",
+    alternates: {
+        canonical: '/digital-marketing-faq',
+    },
 }
 
 const faqs = [
