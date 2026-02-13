@@ -47,7 +47,7 @@ export default function Home() {
                 <text x="300" y="160" className="text subtitle">&mdash; HOUSE OF MARKETING &mdash;</text>
               </svg>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold gradient-text">
+            <h1 className="sr-only">
               Digital Marketing Agency
             </h1>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">
