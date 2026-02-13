@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import { Navigation } from '@/components/navigation'
 import { services } from '@/lib/services-data'
 
@@ -31,10 +30,9 @@ export default function Services() {
                     <section className="space-y-8">
                         <div className="grid md:grid-cols-2 gap-8">
                             {services.map((service, idx) => (
-                                <Link
+                                <div
                                     key={service.id}
-                                    href={`/services/${service.slug}`}
-                                    className="glass p-8 rounded-3xl group hover:bg-white/15 transition-all duration-300 cursor-pointer animate-fadeInUp"
+                                    className="glass p-8 rounded-3xl group hover:bg-white/15 transition-all duration-300 animate-fadeInUp"
                                     style={{ animationDelay: `${idx * 50}ms` }}
                                 >
 
@@ -65,7 +63,7 @@ export default function Services() {
                                             ))}
                                         </div>
                                     </div>
-                                </Link>
+                                </div>
                             ))}
                         </div>
                     </section>
