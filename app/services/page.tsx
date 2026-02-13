@@ -1,7 +1,65 @@
 'use client'
 
 import { Navigation } from '@/components/navigation'
-import { services } from '@/lib/services-data'
+
+const services = [
+    {
+        id: 1,
+        title: 'Search Engine Optimization (SEO)',
+        category: 'Growth',
+        description: 'Structured organic growth for long-term authority and sustainable digital visibility.',
+        tags: ['Strategic Research', 'On-Page Optimization', 'Technical Foundation'],
+    },
+    {
+        id: 2,
+        title: 'Performance Marketing',
+        category: 'Advertising',
+        description: 'Measurable growth through structured campaigns and strategic execution.',
+        tags: ['Strategy & Funnel', 'Campaign Optimization', 'Data-Driven Scaling'],
+    },
+    {
+        id: 3,
+        title: 'Influencer Collaboration',
+        category: 'PR',
+        description: 'Connect with authentic voices to amplify your brand message and reach new audiences.',
+        tags: ['Outreach', 'Management', 'Campaigns'],
+    },
+    {
+        id: 4,
+        title: 'Content Marketing',
+        category: 'Content',
+        description: 'Engage your audience with compelling storytelling that builds trust and authority.',
+        tags: ['Strategy', 'Copywriting', 'Distribution'],
+    },
+    {
+        id: 5,
+        title: 'Social Media Management',
+        category: 'Social',
+        description: 'Build a loyal community and maintain an active, engaging presence on all major platforms.',
+        tags: ['Community', 'Scheduling', 'Analytics'],
+    },
+    {
+        id: 6,
+        title: 'Brand Strategy',
+        category: 'Strategy',
+        description: 'Define your unique voice and position your brand for long-term success in the market.',
+        tags: ['Identity', 'Positioning', 'Consulting'],
+    },
+    {
+        id: 7,
+        title: 'Digital Audits',
+        category: 'Analysis',
+        description: 'Comprehensive analysis of your digital presence to identify opportunities and optimize performance.',
+        tags: ['Site Audit', 'UX Review', 'Competitor Analysis'],
+    },
+    {
+        id: 8,
+        title: 'Data Analytics',
+        category: 'Insights',
+        description: 'Transform raw data into actionable insights to guide your marketing decisions and growth.',
+        tags: ['Reporting', 'Tracking', 'Visualization'],
+    },
+]
 
 export default function Services() {
     return (
