@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'DMKV | House of Marketing',
     description: 'Transform your brand with strategic digital marketing',
-    url: 'https://dmkv.com',
+    url: 'https://www.dmkvhouseofmarketing.com',
     siteName: 'DMKV',
     type: 'website',
   },
