@@ -29,7 +29,8 @@ export default function Home() {
                 <style>
                   {`.text { fill: white; text-anchor: middle; }
                   .title { font-family: serif; font-weight: bold; font-size: 120px; letter-spacing: 4px; }
-                  .subtitle { font-family: sans-serif; font-weight: 300; font-size: 24px; letter-spacing: 6px; text-transform: uppercase; fill: #a3a3a3; }`}
+                  .subtitle { font-family: sans-serif; font-weight: 300; font-size: 24px; letter-spacing: 6px; text-transform: uppercase; fill: #a3a3a3; }
+                  svg { width: 100%; height: auto; aspect-ratio: 600/200; }`}
                 </style>
                 <text x="300" y="110" className="text title">DMKV</text>
                 <text x="300" y="160" className="text subtitle">&mdash; HOUSE OF MARKETING &mdash;</text>

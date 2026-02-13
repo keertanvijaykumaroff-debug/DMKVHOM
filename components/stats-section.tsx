@@ -1,15 +1,37 @@
 'use client'
 
 import { useEffect, useState, useRef } from 'react'
-import { useInView } from 'framer-motion'
+
+function useIntersectionObserver(ref: React.RefObject<Element | null>, options: IntersectionObserverInit = {}) {
+    const [isIntersecting, setIsIntersecting] = useState(false)
+
+    useEffect(() => {
+        const element = ref.current
+        if (!element) return
+
+        const observer = new IntersectionObserver(([entry]) => {
+            setIsIntersecting(entry.isIntersecting)
+        }, options)
+
+        observer.observe(element)
+
+        return () => {
+            observer.disconnect()
+        }
+    }, [ref, options])
+
+    return isIntersecting
+}
 
 function Counter({ end, duration = 2000, label, suffix = '' }: { end: number; duration?: number; label: string; suffix?: string }) {
     const [count, setCount] = useState(0)
-    const ref = useRef(null)
-    const isInView = useInView(ref, { once: true })
+    const ref = useRef<HTMLDivElement>(null)
+    const isInView = useIntersectionObserver(ref, { threshold: 0.1 })
+    const [hasAnimated, setHasAnimated] = useState(false)
 
     useEffect(() => {
-        if (isInView) {
+        if (isInView && !hasAnimated) {
+            setHasAnimated(true)
             let startTime: number
             let animationFrame: number
 
@@ -29,7 +51,7 @@ function Counter({ end, duration = 2000, label, suffix = '' }: { end: number; du
 
             return () => cancelAnimationFrame(animationFrame)
         }
-    }, [isInView, end, duration])
+    }, [isInView, end, duration, hasAnimated])
 
     return (
         <div ref={ref} className="glass p-8 rounded-2xl text-center group hover:scale-105 transition-transform duration-300">
