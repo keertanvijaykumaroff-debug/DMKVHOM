@@ -5,6 +5,7 @@ const clients = [
   { name: 'Giftech Global', logo: '/images/clients/gg.png', type: 'image' },
   { name: 'Mayur Computers', logo: '/images/clients/mayurcomputers.png', type: 'image' },
   { name: 'IMOG', logo: '/images/clients/imog.png', type: 'image' },
+  { name: 'Cold Relics', logo: '/images/clients/cold-relics-logo.png', type: 'image' },
   { name: 'Rixe.io', type: 'text' },
 ]
 
