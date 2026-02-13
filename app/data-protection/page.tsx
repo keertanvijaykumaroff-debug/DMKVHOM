@@ -3,6 +3,9 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
     title: 'Data Protection Policy | DMKV',
     description: 'Learn about DMKV House of Marketing data protection and security measures.',
+    alternates: {
+        canonical: '/data-protection',
+    },
 }
 
 export default function DataProtection() {

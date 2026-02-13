@@ -3,6 +3,9 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
     title: 'Cookie Policy | DMKV',
     description: 'Learn about how DMKV House of Marketing uses cookies and similar technologies.',
+    alternates: {
+        canonical: '/cookie-policy',
+    },
 }
 
 export default function CookiePolicy() {

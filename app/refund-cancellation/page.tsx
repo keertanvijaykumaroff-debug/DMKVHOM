@@ -3,6 +3,9 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
     title: 'Refund & Cancellation Policy | DMKV',
     description: 'Understand DMKV House of Marketing refund and cancellation policies for our services.',
+    alternates: {
+        canonical: '/refund-cancellation',
+    },
 }
 
 export default function RefundCancellation() {

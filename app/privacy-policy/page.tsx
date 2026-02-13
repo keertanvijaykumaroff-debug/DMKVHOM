@@ -3,6 +3,9 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
     title: 'Privacy Policy | DMKV',
     description: 'Learn how DMKV House of Marketing collects, uses, and protects your personal information.',
+    alternates: {
+        canonical: '/privacy-policy',
+    },
 }
 
 export default function PrivacyPolicy() {

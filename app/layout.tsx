@@ -7,10 +7,14 @@ import './globals.css'
 const geist = Geist({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.dmkvhouseofmarketing.com'),
   title: 'DMKV | House of Marketing',
   description: 'Transform your brand with strategic digital marketing, creative excellence, and data-driven insights.',
   keywords: 'digital marketing, branding, social media, marketing agency',
   generator: 'v0.app',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: 'DMKV | House of Marketing',
     description: 'Transform your brand with strategic digital marketing',

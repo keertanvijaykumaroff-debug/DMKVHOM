@@ -3,6 +3,9 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
     title: 'Terms & Conditions | DMKV',
     description: 'Read the terms and conditions for using DMKV House of Marketing services.',
+    alternates: {
+        canonical: '/terms-conditions',
+    },
 }
 
 export default function TermsConditions() {

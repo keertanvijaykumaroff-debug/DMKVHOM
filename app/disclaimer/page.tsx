@@ -3,6 +3,9 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
     title: 'Disclaimer | DMKV',
     description: 'Important disclaimers about DMKV House of Marketing services and website content.',
+    alternates: {
+        canonical: '/disclaimer',
+    },
 }
 
 export default function Disclaimer() {
