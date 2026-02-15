@@ -1,13 +1,12 @@
-'use client'
-
 import Link from 'next/link'
-import Image from 'next/image'
-import { ClientsCarousel } from '@/components/clients-carousel'
+import dynamic from 'next/dynamic'
 import { StatsSection } from '@/components/stats-section'
-import { ProcessTimeline } from '@/components/process-timeline'
-import { BlogCarousel } from '@/components/blog-carousel'
-import { CTASection } from '@/components/cta-section'
 import { organizationSchema, localBusinessSchema, websiteSchema } from '@/lib/schemas'
+
+const ClientsCarousel = dynamic(() => import('@/components/clients-carousel').then(mod => mod.ClientsCarousel))
+const ProcessTimeline = dynamic(() => import('@/components/process-timeline').then(mod => mod.ProcessTimeline))
+const BlogCarousel = dynamic(() => import('@/components/blog-carousel').then(mod => mod.BlogCarousel))
+const CTASection = dynamic(() => import('@/components/cta-section').then(mod => mod.CTASection))
 
 export default function Home() {
   return (

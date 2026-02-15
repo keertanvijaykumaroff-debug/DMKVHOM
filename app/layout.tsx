@@ -1,10 +1,20 @@
 import React from "react"
 import type { Metadata, Viewport } from 'next'
-import { Geist } from 'next/font/google'
+import { Inter, Playfair_Display } from 'next/font/google'
 
 import './globals.css'
 
-const geist = Geist({ subsets: ['latin'] })
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+})
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-playfair',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.dmkvhouseofmarketing.com'),
@@ -55,7 +65,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geist.className} font-sans antialiased`} suppressHydrationWarning>
+      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`} suppressHydrationWarning>
         <Navigation />
         <Breadcrumbs />
         {children}
