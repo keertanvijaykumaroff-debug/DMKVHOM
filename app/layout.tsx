@@ -8,10 +8,12 @@ const geist = Geist({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.dmkvhouseofmarketing.com'),
-  title: 'DMKV | House of Marketing',
+  title: {
+    default: 'DMKV | House of Marketing',
+    template: '%s | DMKV House of Marketing',
+  },
   description: 'Leading digital marketing agency offering SEO, performance marketing, and brand strategy. Transform your business with data-driven digital marketing solutions.',
-  keywords: 'digital marketing, digital marketing agency, SEO services, performance marketing, brand strategy, marketing agency, digital marketing services',
-  generator: 'v0.app',
+  keywords: ['digital marketing', 'digital marketing agency', 'SEO services', 'performance marketing', 'brand strategy', 'marketing agency', 'digital marketing services'],
   alternates: {
     canonical: '/',
   },
@@ -21,9 +23,15 @@ export const metadata: Metadata = {
     url: 'https://www.dmkvhouseofmarketing.com',
     siteName: 'DMKV',
     type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'DMKV | House of Marketing',
+    description: 'Transform your brand with strategic digital marketing',
   },
   icons: {
-    icon: '/favicon.png', // Fallback to favicon.ico if not found, but we'll ask user for png
+    icon: '/favicon.png',
     shortcut: '/favicon.png',
     apple: '/favicon.png',
   },
