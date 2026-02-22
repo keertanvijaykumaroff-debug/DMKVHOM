@@ -49,7 +49,7 @@ export function Footer() {
                         </div>
 
                         {/* Trust Badges */}
-                        <div className="pt-4 flex flex-col gap-3">
+                        <div className="pt-4 flex flex-row flex-wrap gap-3">
                             <div className="flex items-center gap-3 glass px-4 py-2 rounded-xl w-fit border-white/5">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-blue-400">
                                     <path d="M12 2L14.85 5.5H18.5V9.15L22 12L18.5 14.85V18.5H14.85L12 22L9.15 18.5H5.5V14.85L2 12L5.5 9.15V5.5H9.15L12 2Z" fill="currentColor" />
