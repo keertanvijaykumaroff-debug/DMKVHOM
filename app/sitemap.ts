@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { blogPosts } from '@/lib/blog-data'
+import { faqs } from '@/lib/faq-data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dmkvhouseofmarketing.com'
@@ -32,5 +33,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.6,
     }))
 
-    return [...staticRoutes, ...blogRoutes]
+    const faqRoutes = faqs.map((faq) => ({
+        url: `${baseUrl}/digital-marketing-faq/${faq.slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.6,
+    }))
+
+    return [...staticRoutes, ...blogRoutes, ...faqRoutes]
 }

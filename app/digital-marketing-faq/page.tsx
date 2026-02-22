@@ -5,6 +5,11 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion"
 import { Metadata } from "next"
+import Link from "next/link"
+import { ArrowRight, ChevronRight } from "lucide-react"
+import { faqs } from "@/lib/faq-data"
+import { Navigation } from "@/components/navigation"
+import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
     title: "Frequently Asked Questions | DMKV House of Marketing",
@@ -14,144 +19,73 @@ export const metadata: Metadata = {
     },
 }
 
-const faqs = [
-    {
-        question: "What does DMKV – House of Marketing specialize in?",
-        answer: "DMKV is a digital marketing agency specializing in SEO services, performance marketing, brand strategy, and structured growth systems for businesses looking to scale sustainably."
-    },
-    {
-        question: "Is DMKV a digital marketing agency in Bangalore?",
-        answer: "Yes, DMKV operates from Bangalore and works with brands locally and across India, offering SEO, paid ads management, and strategic marketing consulting."
-    },
-    {
-        question: "What SEO services do you provide?",
-        answer: "We provide on-page SEO, keyword research, technical optimization, content structuring, and authority-building strategies designed to improve organic search rankings."
-    },
-    {
-        question: "How long does SEO take to show results?",
-        answer: "SEO is a long-term digital marketing strategy. Results typically build gradually as search engines recognize authority, content relevance, and technical improvements."
-    },
-    {
-        question: "Do you offer performance marketing services?",
-        answer: "Yes, we manage performance marketing campaigns including Google Ads and social media advertising focused on lead generation and measurable ROI."
-    },
-    {
-        question: "What industries do you work with?",
-        answer: "We work with startups, service-based businesses, corporate brands, B2B companies, and e-commerce businesses seeking digital growth."
-    },
-    {
-        question: "Do you provide social media marketing services?",
-        answer: "Yes, we offer social media strategy, content structuring, optimization, and paid promotion support for brand visibility and engagement."
-    },
-    {
-        question: "Can you help generate leads for my business?",
-        answer: "Yes. We design structured lead generation funnels using SEO, paid ads, and optimized content strategies."
-    },
-    {
-        question: "What makes DMKV different from other digital marketing agencies?",
-        answer: "Unlike traditional agencies, we focus on marketing systems and long-term brand positioning rather than short-term campaign bursts."
-    },
-    {
-        question: "Do you offer digital marketing consulting?",
-        answer: "Yes, we provide strategic consulting for brands that need marketing direction, restructuring, or growth planning."
-    },
-    {
-        question: "Do you help startups with digital growth?",
-        answer: "Yes. We build foundational marketing systems for startups to improve visibility, conversions, and market positioning."
-    },
-    {
-        question: "Do you work with e-commerce brands?",
-        answer: "Yes, we support e-commerce businesses with SEO, paid campaigns, and conversion-focused strategies."
-    },
-    {
-        question: "Do you offer website optimization services?",
-        answer: "Yes, we help improve website structure, content clarity, and SEO performance to enhance search rankings and conversions."
-    },
-    {
-        question: "What platforms do you manage ads on?",
-        answer: "We manage campaigns on Google Ads, Instagram, Facebook, and other relevant performance platforms depending on business goals."
-    },
-    {
-        question: "Can you improve my Google rankings?",
-        answer: "We implement structured SEO strategies designed to improve keyword rankings and online visibility over time."
-    },
-    {
-        question: "Do you help with brand positioning?",
-        answer: "Yes, we assist in refining brand messaging, clarity, and authority positioning within your industry."
-    },
-    {
-        question: "Do you provide monthly performance reports?",
-        answer: "Yes, we provide structured reporting to track SEO performance, campaign results, and growth indicators."
-    },
-    {
-        question: "Is DMKV suitable for small businesses?",
-        answer: "Yes, we work with small and medium businesses looking to strengthen their digital presence and generate consistent leads."
-    },
-    {
-        question: "Do you work with B2B companies?",
-        answer: "Yes, we build demand generation and authority strategies for B2B service providers and corporate brands."
-    },
-    {
-        question: "Can you scale campaigns as my business grows?",
-        answer: "Yes, our systems are designed to scale alongside your business growth."
-    },
-    {
-        question: "Do you offer marketing audits?",
-        answer: "Yes, we conduct digital marketing audits to identify gaps, weaknesses, and growth opportunities."
-    },
-    {
-        question: "How do you approach content marketing?",
-        answer: "We align content creation with keyword intent, audience behavior, and conversion objectives."
-    },
-    {
-        question: "Do you provide local SEO services in Bangalore?",
-        answer: "Yes, we help businesses improve their visibility in local search results and Google Maps listings."
-    },
-    {
-        question: "Do you help with online brand visibility?",
-        answer: "Yes, we focus on increasing brand authority across search engines and social platforms."
-    },
-    {
-        question: "Why should I choose DMKV as my digital marketing partner?",
-        answer: "Because we build structured marketing systems designed for sustainable growth, measurable performance, and long-term brand authority."
-    }
-]
+import { createFAQSchema, createBreadcrumbSchema } from '@/lib/schemas'
 
-import { createFAQSchema } from '@/lib/schemas'
+const breadcrumbs = createBreadcrumbSchema([
+    { name: 'Home', url: 'https://www.dmkvhouseofmarketing.com' },
+    { name: 'FAQ', url: 'https://www.dmkvhouseofmarketing.com/digital-marketing-faq' }
+])
 
 export default function FAQPage() {
     const faqSchema = createFAQSchema(faqs)
 
     return (
-        <div className="min-h-screen pt-32 pb-20 px-6">
+        <div className="relative min-h-screen bg-black text-white selection:bg-white/20">
             {/* Schema.org JSON-LD */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
-            <div className="max-w-4xl mx-auto space-y-12">
-                <div className="text-center space-y-4">
-                    <h1 className="text-4xl md:text-5xl font-bold font-serif">Frequently Asked Questions</h1>
-                    <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                        Everything you need to know about our services, strategies, and how we help businesses grow.
-                    </p>
-                </div>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+            />
 
-                <div className="glass p-8 rounded-3xl">
-                    <Accordion type="single" collapsible className="w-full space-y-4">
+            <Navigation />
+
+            <main className="relative z-10 pt-32 pb-20 px-6">
+                <div className="max-w-4xl mx-auto space-y-12">
+                    {/* Breadcrumbs */}
+                    <nav className="flex items-center gap-2 text-sm text-gray-500 mb-8">
+                        <Link href="/" className="hover:text-white transition-colors">Home</Link>
+                        <ChevronRight size={14} />
+                        <span className="text-gray-300">FAQ</span>
+                    </nav>
+
+                    <div className="text-center space-y-4">
+                        <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500">
+                            Frequently Asked Questions
+                        </h1>
+                        <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                            Everything you need to know about our services, strategies, and how we help businesses grow.
+                        </p>
+                    </div>
+
+                    <div className="grid gap-6">
                         {faqs.map((faq, index) => (
-                            <AccordionItem key={index} value={`item-${index}`} className="border-b border-white/10 last:border-0">
-                                <AccordionTrigger className="text-left text-lg font-medium hover:text-white hover:no-underline py-6">
-                                    {faq.question}
-                                </AccordionTrigger>
-                                <AccordionContent className="text-gray-400 leading-relaxed pb-6 text-base">
-                                    {faq.answer}
-                                </AccordionContent>
-                            </AccordionItem>
+                            <Link
+                                key={index}
+                                href={`/digital-marketing-faq/${faq.slug}`}
+                                className="group block"
+                            >
+                                <div className="glass p-8 rounded-2xl hover:bg-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 group-hover:-translate-y-1">
+                                    <div className="flex justify-between items-center gap-4">
+                                        <h2 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
+                                            {faq.question}
+                                        </h2>
+                                        <ArrowRight size={20} className="text-gray-500 group-hover:text-white group-hover:translate-x-1 transition-all flex-shrink-0" />
+                                    </div>
+                                    <p className="mt-4 text-gray-400 line-clamp-2 text-base leading-relaxed">
+                                        {faq.answer}
+                                    </p>
+                                </div>
+                            </Link>
                         ))}
-                    </Accordion>
+                    </div>
                 </div>
-            </div>
+            </main>
+
+            <Footer />
         </div>
     )
 }
