@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { MessageCircle, Heart, Linkedin } from 'lucide-react'
+import { MessageCircle, Heart, Linkedin, Mail } from 'lucide-react'
 
 export function Footer() {
     const links = [
@@ -19,6 +19,7 @@ export function Footer() {
     ]
 
     const social = [
+        { icon: Mail, href: 'mailto:sales@dmkvhouseofmarketing.com' },
         { icon: MessageCircle, href: 'https://wa.me/918861771361' },
         { icon: Linkedin, href: 'https://www.linkedin.com/company/104788746/admin/dashboard/' },
     ]

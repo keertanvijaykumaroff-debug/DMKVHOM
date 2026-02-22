@@ -4,6 +4,7 @@ import React, { useEffect, useRef, Suspense } from 'react'
 import { useFormState, useFormStatus } from 'react-dom'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
+import { Mail, Phone, MapPin, Clock } from 'lucide-react'
 import { Navigation } from '@/components/navigation'
 import { submitContactForm } from '@/actions/contact'
 
@@ -55,32 +56,42 @@ function ContactForm() {
             title: 'Email',
             content: 'sales@dmkvhouseofmarketing.com',
             href: 'mailto:sales@dmkvhouseofmarketing.com',
+            icon: Mail
           },
           {
             title: 'Phone',
             content: '+91 8861771361',
             href: 'tel:+918861771361',
+            icon: Phone
           },
           {
             title: 'Office',
             content: 'Bangalore, KA',
             href: 'https://www.google.com/maps/search/?api=1&query=Bangalore,+KA',
+            icon: MapPin
           },
           {
             title: 'Response Time',
             content: '12 - 24 hours',
             href: null,
+            icon: Clock
           },
         ].map((info, idx) => {
+          const Icon = info.icon
           const Content = () => (
-            <>
-              <h3 className="text-sm font-medium text-gray-400 mb-1">
-                {info.title}
-              </h3>
-              <p className="text-lg font-semibold text-white">
-                {info.content}
-              </p>
-            </>
+            <div className="flex flex-col items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 group-hover:text-white group-hover:bg-white/10 transition-colors">
+                <Icon size={20} />
+              </div>
+              <div>
+                <h3 className="text-sm font-medium text-gray-400 mb-1">
+                  {info.title}
+                </h3>
+                <p className="text-base md:text-lg font-semibold text-white break-all">
+                  {info.content}
+                </p>
+              </div>
+            </div>
           )
 
           return info.href ? (
@@ -89,14 +100,14 @@ function ContactForm() {
               href={info.href}
               target={info.title === 'Office' ? '_blank' : undefined}
               rel={info.title === 'Office' ? 'noopener noreferrer' : undefined}
-              className="glass p-6 rounded-2xl text-center block hover:bg-white/10 transition-all duration-300 transform hover:scale-105 active:scale-95 cursor-pointer"
+              className="glass p-6 rounded-2xl text-center block hover:bg-white/10 transition-all duration-300 transform hover:scale-105 active:scale-95 cursor-pointer group"
             >
               <Content />
             </a>
           ) : (
             <div
               key={idx}
-              className="glass p-6 rounded-2xl text-center"
+              className="glass p-6 rounded-2xl text-center flex flex-col items-center justify-center"
             >
               <Content />
             </div>
