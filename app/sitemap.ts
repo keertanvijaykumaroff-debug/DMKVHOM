@@ -15,6 +15,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { route: '/contact', priority: 0.8, changeFreq: 'monthly' as const },
         { route: '/digital-marketing-faq', priority: 0.7, changeFreq: 'monthly' as const },
         { route: '/about-keertan-vijaykumar', priority: 0.7, changeFreq: 'monthly' as const },
+        { route: '/explore', priority: 0.7, changeFreq: 'monthly' as const },
+        { route: '/support', priority: 0.6, changeFreq: 'monthly' as const },
     ].map(({ route, priority, changeFreq }) => ({
         url: `${baseUrl}${route}`,
         lastModified: now,
