@@ -6,6 +6,10 @@ export const metadata: Metadata = {
     alternates: {
         canonical: '/refund-cancellation',
     },
+    robots: {
+        index: false,
+        follow: false,
+    },
 }
 
 export default function RefundCancellation() {

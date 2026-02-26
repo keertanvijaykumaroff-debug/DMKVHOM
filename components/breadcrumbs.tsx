@@ -51,9 +51,9 @@ export function Breadcrumbs() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
-            <nav aria-label="Breadcrumb" className="w-full bg-black/50 border-b border-white/5 backdrop-blur-sm fixed top-[88px] z-40">
+            <nav aria-label="Breadcrumb" className="w-full bg-black/70 backdrop-blur-md border-b border-white/10 fixed top-20 md:top-28 z-40">
                 <div className="max-w-6xl mx-auto px-6 py-2">
-                    <ol className="flex items-center space-x-2 text-sm text-gray-400">
+                    <ol className="flex items-center space-x-2 text-sm text-white/50">
                         <li>
                             <Link href="/" className="hover:text-white transition-colors flex items-center">
                                 <Home size={14} />
@@ -66,7 +66,7 @@ export function Breadcrumbs() {
                             return (
                                 <Fragment key={item.href}>
                                     <li>
-                                        <ChevronRight size={14} className="text-gray-600" />
+                                        <ChevronRight size={14} className="text-white/20" />
                                     </li>
                                     <li>
                                         {isLast ? (

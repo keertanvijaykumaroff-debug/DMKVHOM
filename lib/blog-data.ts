@@ -1,8 +1,18 @@
-export const blogPosts = [
+export interface BlogPost {
+  slug: string;
+  title: string;
+  date: string;
+  theme?: string;
+  excerpt: string;
+  content: string;
+}
+
+export const blogPosts: BlogPost[] = [
   {
     slug: "future-digital-marketing-2025",
     title: "The Future of Digital Marketing in 2025",
     date: "Oct 12, 2024",
+    theme: "from-violet-600/30 via-purple-500/10 to-transparent",
     excerpt: "Explore the emerging trends that will reshape how brands connect with audiences in the coming years.",
     content: `
       <h2>The Evolution of Engagement</h2>
@@ -15,7 +25,7 @@ export const blogPosts = [
       <p>With smart speakers and visual recognition technology becoming ubiquitous, optimizing for voice and visual search is crucial. Consumers are asking questions naturally and searching with images. Your content strategy must evolve to answer these conversational queries directly.</p>
 
       <h3>3. Sustainability and Ethics</h3>
-      <p>The modern consumer is conscious. They align with brands that reflect their values. Marketing in 2025 will require radical transparency about data usage, supply chains, and environmental impact. Greenwashing won’t work; authentic action will be the only currency that matters.</p>
+      <p>The modern consumer is conscious. They align with brands that reflect their values. Marketing in 2025 will require radical transparency about data usage, supply chains, and environmental impact. Greenwashing won't work; authentic action will be the only currency that matters.</p>
 
       <h2>Conclusion</h2>
       <p>The future isn't about more technology; it's about using technology to be more human. The brands that win in 2025 will be those that use digital tools to foster genuine, lasting relationships.</p>
@@ -25,6 +35,7 @@ export const blogPosts = [
     slug: "mastering-seo-guide",
     title: "Mastering SEO: A Comprehensive Guide",
     date: "Sep 28, 2024",
+    theme: "from-amber-500/30 via-yellow-400/10 to-transparent",
     excerpt: "Unlock the secrets to ranking higher on search engines and driving organic traffic to your website.",
     content: `
       <h2>Beyond Keywords</h2>
@@ -47,6 +58,7 @@ export const blogPosts = [
     slug: "data-driven-storytelling",
     title: "The Power of Data-Driven Storytelling",
     date: "Sep 15, 2024",
+    theme: "from-cyan-500/30 via-teal-400/10 to-transparent",
     excerpt: "Learn how to leverage data insights to craft compelling narratives that resonate with your customers.",
     content: `
       <h2>Where Math Meets Magic</h2>
@@ -66,6 +78,7 @@ export const blogPosts = [
     slug: "brand-loyalty-strategies",
     title: "Building Brand Loyalty in a Crowded Market",
     date: "Aug 30, 2024",
+    theme: "from-rose-500/30 via-pink-400/10 to-transparent",
     excerpt: "Strategies to cultivate a loyal community and stand out from the competition.",
     content: `
       <h2>From Customers to Advocates</h2>
@@ -85,6 +98,7 @@ export const blogPosts = [
     slug: "digital-marketing-companies-near-me-bangalore",
     title: "Finding the Best Digital Marketing Companies Near Me in Bangalore",
     date: "Feb 12, 2025",
+    theme: "from-emerald-500/30 via-green-400/10 to-transparent",
     excerpt: "A comprehensive guide to choosing the right digital marketing partner in Bangalore for your business growth.",
     content: `
       <h2>Why Location Matters in Digital Marketing</h2>
@@ -109,6 +123,7 @@ export const blogPosts = [
     slug: "ultimate-seo-guide-2026",
     title: "The Ultimate Guide to Advanced SEO Strategies",
     date: "Feb 10, 2025",
+    theme: "from-orange-500/30 via-red-400/10 to-transparent",
     excerpt: "Master the art of Search Engine Optimization with these advanced strategies to rank #1.",
     content: `
       <h2>SEO is Evolving</h2>
@@ -128,6 +143,7 @@ export const blogPosts = [
     slug: "professional-website-creation-services",
     title: "Why Professional Website Creation is Crucial for Success",
     date: "Feb 08, 2025",
+    theme: "from-sky-500/30 via-blue-400/10 to-transparent",
     excerpt: "Why a custom-designed website converts better than a template and builds trust instantly.",
     content: `
       <h2>Your Website is Your Digital Storefront</h2>

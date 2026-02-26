@@ -9,7 +9,27 @@ export function Footer() {
         { label: 'About', href: '/about' },
         { label: 'Services', href: '/services' },
         { label: 'Blog', href: '/blog' },
+        { label: 'DMKV FAQ', href: '/digital-marketing-faq' },
         { label: 'Contact Us', href: '/contact' },
+    ]
+
+    const premiumServices = [
+        { label: 'SEO Excellence', href: '/services/seo' },
+        { label: 'Performance Marketing', href: '/services/performance' },
+        { label: 'Social Media', href: '/services/social' },
+        { label: 'Content Strategy', href: '/services/content' },
+        { label: 'Analytics & Data', href: '/services/analytics' },
+        { label: 'Brand Strategy', href: '/services/strategy' },
+        { label: 'Marketing Audits', href: '/services/audits' },
+        { label: 'Influencer Marketing', href: '/services/influencers' },
+    ]
+
+    const aboutLinks = [
+        { label: 'Our Story', href: '/about/story' },
+        { label: 'Our Mission', href: '/about/missions' },
+        { label: 'Our Journey', href: '/about/journey' },
+        { label: 'Our Values', href: '/about/values' },
+        { label: 'Keertan Vijaykumar', href: '/about-keertan-vijaykumar' },
     ]
 
     const legal = [
@@ -19,7 +39,7 @@ export function Footer() {
     ]
 
     const social = [
-        { icon: Mail, href: 'mailto:sales@dmkvhouseofmarketing.com' },
+        { icon: Mail, href: 'mailto:hello@dmkvhouseofmarketing.com' },
         { icon: MessageCircle, href: 'https://wa.me/918861771361' },
         { icon: Linkedin, href: 'https://www.linkedin.com/company/104788746/admin/dashboard/' },
     ]
@@ -50,9 +70,9 @@ export function Footer() {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-12 mb-16">
                     {/* Brand Column */}
-                    <div className="space-y-6">
+                    <div className="col-span-2 md:col-span-1 space-y-6">
                         <div className="flex items-center gap-2">
                             <span className="text-2xl font-serif font-bold text-white">DMKV | House of Marketing</span>
                         </div>
@@ -74,7 +94,7 @@ export function Footer() {
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="text-white font-semibold mb-6">Explore</h4>
+                        <h4 className="text-white font-semibold mb-6 uppercase tracking-widest text-xs">Explore</h4>
                         <ul className="space-y-4">
                             {links.map((link) => (
                                 <li key={link.href}>
@@ -89,11 +109,11 @@ export function Footer() {
                         </ul>
                     </div>
 
-                    {/* Legal/Support */}
+                    {/* All Services */}
                     <div>
-                        <h4 className="text-white font-semibold mb-6">Support</h4>
+                        <h4 className="text-white font-semibold mb-6 uppercase tracking-widest text-xs">Services</h4>
                         <ul className="space-y-4">
-                            {legal.map((link) => (
+                            {premiumServices.map((link) => (
                                 <li key={link.href}>
                                     <Link
                                         href={link.href}
@@ -106,18 +126,38 @@ export function Footer() {
                         </ul>
                     </div>
 
-                    {/* CTA / Location */}
+                    {/* About Pages */}
                     <div>
-                        <h4 className="text-white font-semibold mb-6">Get Started</h4>
-                        <p className="text-gray-400 text-sm mb-6">
-                            Ready to elevate your brand? Let's create something extraordinary together.
-                        </p>
-                        <Link
-                            href="/services"
-                            className="inline-block px-6 py-3 rounded-full border border-white/20 text-white text-sm font-medium hover:bg-white/10 transition-colors"
-                        >
-                            Explore Services
-                        </Link>
+                        <h4 className="text-white font-semibold mb-6 uppercase tracking-widest text-xs">Company</h4>
+                        <ul className="space-y-4">
+                            {aboutLinks.map((link) => (
+                                <li key={link.href}>
+                                    <Link
+                                        href={link.href}
+                                        className="text-gray-400 hover:text-white transition-colors text-sm"
+                                    >
+                                        {link.label}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Legal/Support Column */}
+                    <div>
+                        <h4 className="text-white font-semibold mb-6 uppercase tracking-widest text-xs">Legal</h4>
+                        <ul className="space-y-4">
+                            {legal.map((link) => (
+                                <li key={link.href}>
+                                    <Link
+                                        href={link.href}
+                                        className="text-gray-400 hover:text-white transition-colors text-sm"
+                                    >
+                                        {link.label}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
 

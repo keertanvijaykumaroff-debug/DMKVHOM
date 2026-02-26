@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { Navigation } from '@/components/navigation'
 import { servicesSchema, createBreadcrumbSchema } from '@/lib/schemas'
 
@@ -15,6 +16,7 @@ const services = [
         category: 'Growth',
         description: 'Structured organic growth for long-term authority and sustainable digital visibility.',
         tags: ['Strategic Research', 'On-Page Optimization', 'Technical Foundation'],
+        href: '/services/seo'
     },
     {
         id: 2,
@@ -22,6 +24,7 @@ const services = [
         category: 'Advertising',
         description: 'Measurable growth through structured campaigns and strategic execution.',
         tags: ['Strategy & Funnel', 'Campaign Optimization', 'Data-Driven Scaling'],
+        href: '/services/performance'
     },
     {
         id: 3,
@@ -29,6 +32,7 @@ const services = [
         category: 'PR',
         description: 'Connect with authentic voices to amplify your brand message and reach new audiences.',
         tags: ['Outreach', 'Management', 'Campaigns'],
+        href: '/services/influencers'
     },
     {
         id: 4,
@@ -36,6 +40,7 @@ const services = [
         category: 'Content',
         description: 'Engage your audience with compelling storytelling that builds trust and authority.',
         tags: ['Strategy', 'Copywriting', 'Distribution'],
+        href: '/services/content'
     },
     {
         id: 5,
@@ -43,6 +48,7 @@ const services = [
         category: 'Social',
         description: 'Build a loyal community and maintain an active, engaging presence on all major platforms.',
         tags: ['Community', 'Scheduling', 'Analytics'],
+        href: '/services/social'
     },
     {
         id: 6,
@@ -50,6 +56,7 @@ const services = [
         category: 'Strategy',
         description: 'Define your unique voice and position your brand for long-term success in the market.',
         tags: ['Identity', 'Positioning', 'Consulting'],
+        href: '/services/strategy'
     },
     {
         id: 7,
@@ -57,6 +64,7 @@ const services = [
         category: 'Analysis',
         description: 'Comprehensive analysis of your digital presence to identify opportunities and optimize performance.',
         tags: ['Site Audit', 'UX Review', 'Competitor Analysis'],
+        href: '/services/audits'
     },
     {
         id: 8,
@@ -64,6 +72,7 @@ const services = [
         category: 'Insights',
         description: 'Transform raw data into actionable insights to guide your marketing decisions and growth.',
         tags: ['Reporting', 'Tracking', 'Visualization'],
+        href: '/services/analytics'
     },
 ]
 
@@ -103,18 +112,20 @@ export default function Services() {
                     <section className="space-y-8">
                         <div className="grid md:grid-cols-2 gap-8">
                             {services.map((service, idx) => (
-                                <div
+                                <Link
                                     key={service.id}
-                                    className="glass p-8 rounded-3xl group hover:bg-white/15 transition-all duration-300 animate-fadeInUp"
+                                    href={service.href}
+                                    className="glass p-8 rounded-3xl group hover:bg-white/15 transition-all duration-300 animate-fadeInUp block"
                                     style={{ animationDelay: `${idx * 50}ms` }}
                                 >
-
-
                                     <div className="space-y-4">
                                         <div className="flex items-center justify-between">
                                             <span className="text-sm font-medium text-gray-400">
                                                 {service.category}
                                             </span>
+                                            <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                                                <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                                            </div>
                                         </div>
 
                                         <h3 className="text-2xl font-semibold text-white group-hover:text-white transition-colors">
@@ -136,7 +147,7 @@ export default function Services() {
                                             ))}
                                         </div>
                                     </div>
-                                </div>
+                                </Link>
                             ))}
                         </div>
                     </section>

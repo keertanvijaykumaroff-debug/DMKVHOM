@@ -1,7 +1,7 @@
 'use client'
 
-import React, { useEffect, useRef, Suspense } from 'react'
-import { useFormState, useFormStatus } from 'react-dom'
+import React, { useEffect, useRef, Suspense, useActionState } from 'react'
+import { useFormStatus } from 'react-dom'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { Mail, Phone, MapPin, Clock } from 'lucide-react'
@@ -25,7 +25,7 @@ function SubmitButton() {
 function ContactForm() {
   const searchParams = useSearchParams()
   const messageRef = useRef<HTMLTextAreaElement>(null)
-  const [state, formAction] = useFormState(submitContactForm, {
+  const [state, formAction] = useActionState(submitContactForm, {
     success: false,
     message: '',
   })
@@ -54,8 +54,8 @@ function ContactForm() {
         {[
           {
             title: 'Email',
-            content: 'sales@dmkvhouseofmarketing.com',
-            href: 'mailto:sales@dmkvhouseofmarketing.com',
+            content: 'hello@dmkvhouseofmarketing.com',
+            href: 'mailto:hello@dmkvhouseofmarketing.com',
             icon: Mail
           },
           {

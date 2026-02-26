@@ -81,6 +81,11 @@ export default async function FAQPost({ params }: Props) {
 
                     <article className="space-y-12">
                         <div className="space-y-6">
+                            <div className="flex items-center gap-3">
+                                <span className="px-3 py-1 bg-white/10 rounded-full text-[10px] font-bold uppercase tracking-wider text-white/60 border border-white/5">
+                                    {faq.category}
+                                </span>
+                            </div>
                             <h1 className="text-4xl md:text-5xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
                                 {faq.question}
                             </h1>
