@@ -68,6 +68,7 @@ export default function Home() {
             loop
             muted
             playsInline
+            aria-hidden="true"
             className="absolute inset-0 w-full h-full object-cover md:scale-125 scale-100 z-0"
           >
             <source src="/videos/Logo_Merging_Video_Generation.mp4" type="video/mp4" />

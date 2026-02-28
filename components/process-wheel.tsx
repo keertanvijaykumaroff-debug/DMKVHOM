@@ -154,9 +154,9 @@ function StageCard({ stage, index }: { stage: any, index: number }) {
                     <div className="transition-all duration-500 group-hover:scale-110">
                         <stage.icon size={32} color={stage.color} strokeWidth={1.5} />
                     </div>
-                    <h4 className="text-4xl font-bold tracking-tight" style={{ color: stage.color }}>
+                    <h3 className="text-4xl font-bold tracking-tight" style={{ color: stage.color }}>
                         {stage.title}
-                    </h4>
+                    </h3>
                 </div>
                 <p className="text-gray-400 text-sm md:text-base leading-relaxed font-light">
                     {stage.description}
@@ -183,7 +183,7 @@ export function ProcessWheel() {
                             Our Methodology
                         </m.div>
                         <h2 className="text-5xl md:text-8xl font-bold text-white tracking-tighter leading-none">
-                            How We <span className="text-white/20">Work.</span>
+                            How We <span className="text-white/50">Work.</span>
                         </h2>
                         {/* sr-only keyword text for H2 targeting */}
                         <p className="text-sm text-white/40 mt-4 font-light tracking-wide">Our digital marketing process — built for measurable results.</p>
@@ -232,9 +232,9 @@ export function ProcessWheel() {
                                     <div className="p-2 rounded-lg bg-white/5 border border-white/10">
                                         <stage.icon size={24} color={stage.color} strokeWidth={1.5} />
                                     </div>
-                                    <h4 className="text-2xl font-bold tracking-tight" style={{ color: stage.color }}>
+                                    <h3 className="text-2xl font-bold tracking-tight" style={{ color: stage.color }}>
                                         {stage.title}
-                                    </h4>
+                                    </h3>
                                 </div>
                                 <p className="text-gray-400 text-sm leading-relaxed font-light pl-12 border-l border-white/10">
                                     {stage.description}

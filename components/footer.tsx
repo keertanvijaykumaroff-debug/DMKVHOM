@@ -39,9 +39,9 @@ export function Footer() {
     ]
 
     const social = [
-        { icon: Mail, href: 'mailto:hello@dmkvhouseofmarketing.com' },
-        { icon: MessageCircle, href: 'https://wa.me/918861771361' },
-        { icon: Linkedin, href: 'https://www.linkedin.com/company/104788746/admin/dashboard/' },
+        { icon: Mail, href: 'mailto:hello@dmkvhouseofmarketing.com', label: 'Email' },
+        { icon: MessageCircle, href: 'https://wa.me/918861771361', label: 'WhatsApp' },
+        { icon: Linkedin, href: 'https://www.linkedin.com/company/104788746/admin/dashboard/', label: 'LinkedIn' },
     ]
 
     return (
@@ -84,6 +84,7 @@ export function Footer() {
                                 <Link
                                     key={idx}
                                     href={item.href}
+                                    aria-label={item.label}
                                     className="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300"
                                 >
                                     <item.icon size={18} />
@@ -94,7 +95,7 @@ export function Footer() {
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="text-white font-semibold mb-6 uppercase tracking-widest text-xs">Explore</h4>
+                        <h3 className="text-white font-semibold mb-6 uppercase tracking-widest text-xs">Explore</h3>
                         <ul className="space-y-4">
                             {links.map((link) => (
                                 <li key={link.href}>
@@ -111,7 +112,7 @@ export function Footer() {
 
                     {/* All Services */}
                     <div>
-                        <h4 className="text-white font-semibold mb-6 uppercase tracking-widest text-xs">Services</h4>
+                        <h3 className="text-white font-semibold mb-6 uppercase tracking-widest text-xs">Services</h3>
                         <ul className="space-y-4">
                             {premiumServices.map((link) => (
                                 <li key={link.href}>
@@ -128,7 +129,7 @@ export function Footer() {
 
                     {/* About Pages */}
                     <div>
-                        <h4 className="text-white font-semibold mb-6 uppercase tracking-widest text-xs">Company</h4>
+                        <h3 className="text-white font-semibold mb-6 uppercase tracking-widest text-xs">Company</h3>
                         <ul className="space-y-4">
                             {aboutLinks.map((link) => (
                                 <li key={link.href}>
@@ -145,7 +146,7 @@ export function Footer() {
 
                     {/* Legal/Support Column */}
                     <div>
-                        <h4 className="text-white font-semibold mb-6 uppercase tracking-widest text-xs">Legal</h4>
+                        <h3 className="text-white font-semibold mb-6 uppercase tracking-widest text-xs">Legal</h3>
                         <ul className="space-y-4">
                             {legal.map((link) => (
                                 <li key={link.href}>
