@@ -35,9 +35,14 @@ export const metadata: Metadata = {
 const ClientsCarousel = dynamic(() => import('@/components/clients-carousel').then(mod => mod.ClientsCarousel))
 const ProcessWheel = dynamic(() => import('@/components/process-wheel').then(mod => mod.ProcessWheel))
 const BlogCarousel = dynamic(() => import('@/components/blog-carousel').then(mod => mod.BlogCarousel))
+const VideoCarousel = dynamic(() => import('@/components/video-carousel').then(mod => mod.VideoCarousel))
 const CTASection = dynamic(() => import('@/components/cta-section').then(mod => mod.CTASection))
 
+import { preload } from 'react-dom'
+
 export default function Home() {
+  preload('/videos/Logo_Merging_Video_Generation.mp4', { as: 'video', fetchPriority: 'high' })
+
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-background via-background to-background overflow-hidden">
       {/* Schema.org JSON-LD */}
@@ -61,18 +66,18 @@ export default function Home() {
 
       <main className="relative z-10 flex flex-col min-h-screen pt-24 md:pt-32 pb-20">
         {/* Video Banner Hero Section */}
-        <section className="relative h-[35vh] md:h-[80vh] flex flex-col items-center justify-end pb-8 md:pb-24 overflow-hidden">
+        <section className="relative h-[35vh] md:h-[80vh] flex flex-col items-center justify-end pb-8 md:pb-24 overflow-hidden bg-black">
           {/* Background Video */}
           <video
+            src="/videos/Logo_Merging_Video_Generation.mp4"
             autoPlay
             loop
             muted
             playsInline
+            preload="auto"
             aria-hidden="true"
             className="absolute inset-0 w-full h-full object-cover md:scale-125 scale-100 z-0"
-          >
-            <source src="/videos/Logo_Merging_Video_Generation.mp4" type="video/mp4" />
-          </video>
+          />
 
           {/* Subtle Overlay for legibility */}
           <div className="absolute inset-0 bg-black/40 z-[1]" />
@@ -133,6 +138,8 @@ export default function Home() {
         </section>
 
         <ProcessWheel />
+
+        <VideoCarousel />
 
         <BlogCarousel />
 
